@@ -7,9 +7,9 @@ Memory arena is previously allocated huge chunk of heap memory with it's own fun
 ### Structure of arena.c 
 struct myMemory -> structure for arena that contains memory and size, offset variables.
 
-**myMemory\* *** arenaCreate(**size_t size**) -> creates arena by allocating memory for our base and setting size to selected **size** and offset to 0. ***Returns pointer to arena***
+**myMemory\* ** arenaCreate(**size_t size**) -> creates arena by allocating memory for our base and setting size to selected **size** and offset to 0. ***Returns pointer to arena***
 
-**void\* *** arenaAlloc(**myMemory\* arena, size_t size**) -> checks if u can "allocate" new memory, increases offset by **size**. ***Returns pointer to reserved chunk of base from previous_offset to current_offset.***
+**void\* ** arenaAlloc(**myMemory\* arena, size_t size**) -> checks if u can "allocate" new memory, increases offset by **size**. ***Returns pointer to reserved chunk of base from previous_offset to current_offset.***
 
 ***void*** arenaReset(**myMemory\* arena**) -> resets **arena**'s offset to 0, which implies that u will be "allocating" memory form beginig of chunk. Previous data will be overriden.
 
